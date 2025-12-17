@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ConsoleApp.Models;
+
+Music music = new Music();
+music.Name = "Musica teste 1";
+
+Console.WriteLine(music.Name);
