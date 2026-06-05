@@ -2,11 +2,11 @@
 
 Artist artist = new Artist("Michael Jackson");
 
-Music music1 = new Music("Billie Jean", artist, 294, false);
-Music music2 = new Music("Beat It", artist, 258, true);
-Music music3 = new Music("Wanna Be Startin’ Somethin’", artist, 363, true);
+var music1 = new Music("Billie Jean", artist, 294, false);
+var music2 = new Music("Beat It", artist, 258, true);
+var music3 = new Music("Wanna Be Startin’ Somethin’", artist, 363, true);
 
-Album album1 = new Album("Thriller",artist);
+var album1 = new Album("Thriller",artist);
 album1.Musics.Add(music1);
 album1.Musics.Add(music2);
 album1.Musics.Add(music3);
@@ -15,3 +15,14 @@ music1.DisplayInformation();
 artist.DisplayAlbumsInformation();
 artist.DisplayMusicsInformation();
 album1.DisplayInformation();
+
+artist.AddRating(5);
+artist.AddRating(5);
+artist.AddRating(4);
+
+music1.AddRating(5);
+music1.AddRating(4);
+music1.AddRating(4);
+
+Console.WriteLine($"Average ratings for the artist {artist.Name}: {artist.GetAverageRating()}");
+Console.WriteLine($"Average ratings for the song {music1.Name}: {music1.GetAverageRating()}");
