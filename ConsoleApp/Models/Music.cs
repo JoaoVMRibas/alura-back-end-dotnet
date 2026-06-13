@@ -9,8 +9,8 @@ internal class Music : IRateable
     public int Duration { get; set; }
     public bool IsAvailable { get; set; }
 
-    private List<int> _ratings = [];
-    public IReadOnlyCollection<int> Ratings => _ratings.AsReadOnly();
+    private List<Rating> _ratings = [];
+    public IReadOnlyCollection<Rating> Ratings => _ratings.AsReadOnly();
 
     public Music(string name, Artist artist, int duration, bool isAvailable)
     {
@@ -22,17 +22,14 @@ internal class Music : IRateable
         Artist.Musics.Add(this);
     }
 
-    public void AddRating(int rating)
+    public void AddRating(Rating rating)
     {
-        if (rating < 0 || rating > 5)
-            throw new ArgumentOutOfRangeException(nameof(rating), "The rating should be between 1 and 5.");
-
         _ratings.Add(rating);
     }
 
     public double GetAverageRating()
     {
-        return _ratings.Count() == 0 ? 0.0 : _ratings.Average();
+        return _ratings.Count() == 0 ? 0.0 : _ratings.Average(r => r.Value);
     }
 
     public void DisplayInformation()

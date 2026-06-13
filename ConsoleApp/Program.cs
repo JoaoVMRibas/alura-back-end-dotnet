@@ -16,13 +16,15 @@ artist.DisplayAlbumsInformation();
 artist.DisplayMusicsInformation();
 album1.DisplayInformation();
 
-artist.AddRating(5);
-artist.AddRating(5);
-artist.AddRating(4);
+artist.AddRating(new Rating(5));
+artist.AddRating(new Rating(5));
+artist.AddRating(new Rating(4));
 
-music1.AddRating(5);
-music1.AddRating(4);
-music1.AddRating(4);
+
+music1.AddRating(new Rating(5));
+music1.AddRating(new Rating(4));
+music1.AddRating(new Rating(4));
+
 
 Console.WriteLine($"Average ratings for the artist {artist.Name}: {artist.GetAverageRating()}");
 Console.WriteLine($"Average ratings for the song {music1.Name}: {music1.GetAverageRating()}");

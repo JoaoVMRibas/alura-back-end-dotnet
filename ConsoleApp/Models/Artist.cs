@@ -8,8 +8,8 @@ internal class Artist : IRateable
     public List<Album> Albums { get; } = [];
     public List<Music> Musics { get; } = [];
 
-    private List<int> _ratings = [];
-    public IReadOnlyCollection<int> Ratings => _ratings.AsReadOnly();
+    private List<Rating> _ratings = [];
+    public IReadOnlyCollection<Rating> Ratings => _ratings.AsReadOnly();
 
     public Artist(string name) 
     {
@@ -26,17 +26,14 @@ internal class Artist : IRateable
         Musics.Add(music);
     }
 
-    public void AddRating(int rating)
-    {
-        if (rating < 0 || rating > 5)
-            throw new ArgumentOutOfRangeException(nameof(rating), "The rating should be between 1 and 5.");
-    
+    public void AddRating(Rating rating)
+    {    
         _ratings.Add(rating);
     }
 
     public double GetAverageRating()
     {
-        return _ratings.Count() == 0 ? 0.0 : _ratings.Average();
+        return _ratings.Count() == 0 ? 0.0 : _ratings.Average(r => r.Value);
     }
 
     public void DisplayAlbumsInformation()

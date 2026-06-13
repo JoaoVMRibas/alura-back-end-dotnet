@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace ConsoleApp.Interface;
 
 internal interface IRateable
 {
-    IReadOnlyCollection<int> Ratings { get; }
-    void AddRating(int rating);
+    IReadOnlyCollection<Rating> Ratings { get; }
+    void AddRating(Rating rating);
     double GetAverageRating();
 }
