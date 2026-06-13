@@ -2,7 +2,7 @@
 
 namespace ConsoleApp.Models;
 
-internal class Artist : IRateable
+internal class Artist : IRateable, IDisplayable
 {
     public string Name { get; set; } = string.Empty;
     public List<Album> Albums { get; } = [];
@@ -36,7 +36,15 @@ internal class Artist : IRateable
         return _ratings.Count() == 0 ? 0.0 : _ratings.Average(r => r.Value);
     }
 
-    public void DisplayAlbumsInformation()
+    public void DisplayInformation()
+    {
+        Console.WriteLine($"--- Artist : {Name} ---");
+        DisplayAlbumsInformation();
+        DisplayMusicsInformation();
+        Console.WriteLine();
+    }
+
+    private void DisplayAlbumsInformation()
     {
         Console.WriteLine($"--- Artist : {Name} ---");
         if (Albums.Count > 0)
@@ -50,7 +58,7 @@ internal class Artist : IRateable
         Console.WriteLine();
     }
 
-    public void DisplayMusicsInformation()
+    private void DisplayMusicsInformation()
     {
         Console.WriteLine($"--- Artist : {Name} ---");
         if (Musics.Count > 0)

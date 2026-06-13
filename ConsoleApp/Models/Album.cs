@@ -1,6 +1,8 @@
-﻿namespace ConsoleApp.Models;
+﻿using ConsoleApp.Interface;
 
-internal class Album
+namespace ConsoleApp.Models;
+
+internal class Album :  IDisplayable
 {
     public string Name { get; set; } = string.Empty;
     public int Duration => Musics.Sum(m => m.Duration);

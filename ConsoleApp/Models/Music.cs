@@ -2,7 +2,7 @@
 
 namespace ConsoleApp.Models;
 
-internal class Music : IRateable
+internal class Music : IRateable, IDisplayable
 {
     public string Name { get; set; }
     public Artist Artist { get; set; }
