@@ -1,9 +1,19 @@
 ﻿using ConsoleApp.Models;
+using ConsoleApp.Models.Menu;
+
+Dictionary<int, MenuBase> menuOptions = new()
+{
+    { 1, new RegisterArtistMenu() },
+    { 2, new RegisterAlbumMenu() },
+    { 3, new RegisterMusicMenu() },
+    { 4, new ShowRegisteredArtistsMenu() },
+    { 5, new RatingMenu() },
+    { 6, new ViewArtistDetailsMenu() },
+    { -1, new ExitMenu() }
+};
 
 Dictionary<string, Artist> artists = [];
-MenuManager menuManager = new MenuManager();
 int menuOption = 0;
-
 do
 {
     Console.WriteLine("ScreenSound:");
@@ -16,37 +26,15 @@ do
     Console.WriteLine("-1 - Exit");
 
     Console.Write("\nEnter the desired option: ");
-    menuOption = int.Parse(Console.ReadLine()!);
+    menuOption = int.Parse(Console.ReadLine() ?? "0");
 
-    switch(menuOption)
+    if(menuOptions.ContainsKey(menuOption))
     {
-        case 1:
-            menuManager.RegisterArtist(artists);
-            Console.Clear();
-            break;
-        case 2:
-            menuManager.RegisterAlbum(artists);
-            Console.Clear();
-            break;
-        case 3:
-            menuManager.RegisterMusic(artists);
-            Console.Clear();
-            break;
-        case 4:
-            menuManager.ShowRegisteredArtists(artists);
-            Console.Clear();
-            break;
-        case 5:
-            menuManager.AddRatingToArtist(artists);
-            Console.Clear();
-            break;
-        case 6:
-            menuManager.ViewArtistDetails(artists);
-            Console.Clear();
-            break;
-        default:
-            Console.WriteLine("Invalid option.");
-            Console.Clear();
-            break;
+        menuOptions[menuOption].Execute(artists);
     }
+    else
+    {
+        Console.WriteLine("Invalid option.");
+    }
+    Console.Clear();
 } while (menuOption != -1);
