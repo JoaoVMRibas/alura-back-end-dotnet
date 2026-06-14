@@ -38,7 +38,9 @@ internal class Artist : IRateable, IDisplayable
 
     public void DisplayInformation()
     {
-        Console.WriteLine($"--- Artist : {Name} ---");
+        Console.WriteLine($"\n--- Artist : {Name} ---");
+        Console.WriteLine($"Rating: {GetAverageRating()}");
+
         DisplayAlbumsInformation();
         DisplayMusicsInformation();
         Console.WriteLine();
@@ -46,7 +48,7 @@ internal class Artist : IRateable, IDisplayable
 
     private void DisplayAlbumsInformation()
     {
-        Console.WriteLine($"--- Artist : {Name} ---");
+        Console.WriteLine($"\n--- Albums ---");
         if (Albums.Count > 0)
         {
             Albums.ForEach(a => Console.WriteLine($"Album: {a.Name}"));
@@ -60,7 +62,7 @@ internal class Artist : IRateable, IDisplayable
 
     private void DisplayMusicsInformation()
     {
-        Console.WriteLine($"--- Artist : {Name} ---");
+        Console.WriteLine($"--- Songs ---");
         if (Musics.Count > 0)
         {
             Musics.ForEach(m => Console.WriteLine($"Music: {m.Name}"));
