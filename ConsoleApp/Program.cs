@@ -1,30 +1,40 @@
 ﻿using ConsoleApp.Models;
+using ConsoleApp.Models.Menu;
 
-Artist artist = new Artist("Michael Jackson");
+Dictionary<int, MenuBase> menuOptions = new()
+{
+    { 1, new RegisterArtistMenu() },
+    { 2, new RegisterAlbumMenu() },
+    { 3, new RegisterMusicMenu() },
+    { 4, new ShowRegisteredArtistsMenu() },
+    { 5, new RatingMenu() },
+    { 6, new ViewArtistDetailsMenu() },
+    { -1, new ExitMenu() }
+};
 
-var music1 = new Music("Billie Jean", artist, 294, false);
-var music2 = new Music("Beat It", artist, 258, true);
-var music3 = new Music("Wanna Be Startin’ Somethin’", artist, 363, true);
+Dictionary<string, Artist> artists = [];
+int menuOption = 0;
+do
+{
+    Console.WriteLine("ScreenSound:");
+    Console.WriteLine("1 - Register Artist");
+    Console.WriteLine("2 - Register Album");
+    Console.WriteLine("3 - Register Music");
+    Console.WriteLine("4 - Show Registered Artists");
+    Console.WriteLine("5 - Rate Artist");
+    Console.WriteLine("6 - View Artist Details");
+    Console.WriteLine("-1 - Exit");
 
-var album1 = new Album("Thriller",artist);
-album1.Musics.Add(music1);
-album1.Musics.Add(music2);
-album1.Musics.Add(music3);
+    Console.Write("\nEnter the desired option: ");
+    menuOption = int.Parse(Console.ReadLine() ?? "0");
 
-music1.DisplayInformation();
-artist.DisplayAlbumsInformation();
-artist.DisplayMusicsInformation();
-album1.DisplayInformation();
-
-artist.AddRating(new Rating(5));
-artist.AddRating(new Rating(5));
-artist.AddRating(new Rating(4));
-
-
-music1.AddRating(new Rating(5));
-music1.AddRating(new Rating(4));
-music1.AddRating(new Rating(4));
-
-
-Console.WriteLine($"Average ratings for the artist {artist.Name}: {artist.GetAverageRating()}");
-Console.WriteLine($"Average ratings for the song {music1.Name}: {music1.GetAverageRating()}");
+    if(menuOptions.ContainsKey(menuOption))
+    {
+        menuOptions[menuOption].Execute(artists);
+    }
+    else
+    {
+        Console.WriteLine("Invalid option.");
+    }
+    Console.Clear();
+} while (menuOption != -1);
