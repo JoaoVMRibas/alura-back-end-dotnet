@@ -5,6 +5,7 @@ internal class RegisterMusicMenu : MenuBase
     internal override void Execute(Dictionary<string, Artist> artists)
     {
         base.Execute(artists);
+        HeaderMenu("Register Music");
         Console.Write("Artist's name: ");
         var name = Console.ReadLine() ?? "";
 

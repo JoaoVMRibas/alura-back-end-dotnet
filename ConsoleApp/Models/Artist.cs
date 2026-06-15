@@ -38,7 +38,8 @@ internal class Artist : IRateable, IDisplayable
 
     public void DisplayInformation()
     {
-        Console.WriteLine($"\n--- Artist : {Name} ---");
+        Console.WriteLine($"\n--- Artist ---");
+        Console.WriteLine($"Name: {Name}");
         Console.WriteLine($"Rating: {GetAverageRating()}");
 
         DisplayAlbumsInformation();

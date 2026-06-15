@@ -5,6 +5,7 @@ internal class ShowRegisteredArtistsMenu : MenuBase
     internal override void Execute(Dictionary<string, Artist> artists)
     {
         base.Execute(artists);
+        HeaderMenu("Registered Artists");
         if (artists == null || artists.Count == 0)
         {
             Console.WriteLine("No registered artists.");

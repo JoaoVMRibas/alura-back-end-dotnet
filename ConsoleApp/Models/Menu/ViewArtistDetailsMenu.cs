@@ -5,6 +5,7 @@ internal class ViewArtistDetailsMenu : MenuBase
     internal override void Execute(Dictionary<string, Artist> artists)
     {
         base.Execute(artists);
+        HeaderMenu("Artist Details");
         Console.Write("Artist's name: ");
         var name = Console.ReadLine() ?? "";
 
