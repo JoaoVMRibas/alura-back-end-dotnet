@@ -1,11 +1,11 @@
 ﻿namespace ConsoleApp.Models.Menu;
 
-internal class RatingMenu : MenuBase
+internal class RatingArtistMenu : MenuBase
 {
     internal override void Execute(Dictionary<string, Artist> artists)
     {
         base.Execute(artists);
-        HeaderMenu("Rating");
+        HeaderMenu("Artist Rating");
         Console.Write("Artist's name: ");
         var name = Console.ReadLine() ?? "";
 

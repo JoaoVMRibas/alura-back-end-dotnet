@@ -9,7 +9,6 @@ internal class Artist : IRateable, IDisplayable
     public List<Music> Musics { get; } = [];
 
     private List<Rating> _ratings = [];
-    public IReadOnlyCollection<Rating> Ratings => _ratings.AsReadOnly();
 
     public Artist(string name) 
     {
@@ -52,7 +51,8 @@ internal class Artist : IRateable, IDisplayable
         Console.WriteLine($"\n--- Albums ---");
         if (Albums.Count > 0)
         {
-            Albums.ForEach(a => Console.WriteLine($"Album: {a.Name}"));
+            Albums.ForEach(a =>
+                Console.WriteLine($"Album: {a.Name} - Rating: {a.GetAverageRating()}"));
         }
         else 
         {
@@ -66,7 +66,7 @@ internal class Artist : IRateable, IDisplayable
         Console.WriteLine($"--- Songs ---");
         if (Musics.Count > 0)
         {
-            Musics.ForEach(m => Console.WriteLine($"Music: {m.Name}"));
+            Musics.ForEach(m => Console.WriteLine($"Music: {m.Name} - Rating: {m.GetAverageRating()}"));
         }
         else
         {

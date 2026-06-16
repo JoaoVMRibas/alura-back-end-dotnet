@@ -9,7 +9,6 @@ internal class Music : IRateable, IDisplayable
     public bool IsAvailable { get; set; }
 
     private List<Rating> _ratings = [];
-    public IReadOnlyCollection<Rating> Ratings => _ratings.AsReadOnly();
 
     public Music(string name, int duration, bool isAvailable)
     {
@@ -32,6 +31,7 @@ internal class Music : IRateable, IDisplayable
     {
         Console.WriteLine($"--- Music ---");
         Console.WriteLine("Name: " + Name);
+        Console.WriteLine("Rating: " + GetAverageRating());
         Console.WriteLine("Duration: " + Duration);
         Console.WriteLine("Available: " + IsAvailable);
         Console.WriteLine();
