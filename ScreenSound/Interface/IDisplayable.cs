@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.Interface;
+﻿namespace ScreenSound.Interface;
 
 internal interface IDisplayable
 {

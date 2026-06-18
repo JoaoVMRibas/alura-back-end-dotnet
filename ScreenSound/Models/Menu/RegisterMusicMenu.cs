@@ -1,11 +1,11 @@
-﻿namespace ConsoleApp.Models.Menu;
+﻿namespace ScreenSound.Models.Menu;
 
-internal class RegisterAlbumMenu : MenuBase
+internal class RegisterMusicMenu : MenuBase
 {
     internal override void Execute(Dictionary<string, Artist> artists)
     {
         base.Execute(artists);
-        HeaderMenu("Register Album");
+        HeaderMenu("Register Music");
         Console.Write("Artist's name: ");
         var name = Console.ReadLine() ?? "";
 
@@ -16,10 +16,10 @@ internal class RegisterAlbumMenu : MenuBase
             return;
         }
 
-        Console.Write("Album's name: ");
+        Console.Write("Song's name: ");
         var albumName = Console.ReadLine() ?? "";
 
-        artists[name].AddAlbum(new Album(albumName));
+        artists[name].AddMusic(new Music(albumName, 250, true));
         FinalizeMenu();
     }
 }

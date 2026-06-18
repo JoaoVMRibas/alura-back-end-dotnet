@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.Models.Menu;
+﻿namespace ScreenSound.Models.Menu;
 
 internal class MenuBase
 {

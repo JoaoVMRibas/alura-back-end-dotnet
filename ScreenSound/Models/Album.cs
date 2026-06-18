@@ -1,6 +1,6 @@
-﻿using ConsoleApp.Interface;
+﻿using ScreenSound.Interface;
 
-namespace ConsoleApp.Models;
+namespace ScreenSound.Models;
 
 internal class Album :  IRateable, IDisplayable
 {

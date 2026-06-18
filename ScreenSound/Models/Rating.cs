@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.Models;
+﻿namespace ScreenSound.Models;
 
 internal class Rating
 {

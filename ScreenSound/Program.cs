@@ -1,5 +1,5 @@
-﻿using ConsoleApp.Models;
-using ConsoleApp.Models.Menu;
+﻿using ScreenSound.Models;
+using ScreenSound.Models.Menu;
 
 Dictionary<int, MenuBase> menuOptions = new()
 {
