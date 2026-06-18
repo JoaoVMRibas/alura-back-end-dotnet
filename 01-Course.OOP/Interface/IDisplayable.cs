@@ -1,4 +1,4 @@
-﻿namespace Course.Oop.Interface;
+﻿namespace Course.OOP.Interface;
 
 internal interface IDisplayable
 {

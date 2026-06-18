@@ -1,6 +1,6 @@
-﻿using Course.Oop.Interface;
+﻿using Course.OOP.Interface;
 
-namespace Course.Oop.Models;
+namespace Course.OOP.Models;
 
 internal class Artist : IRateable, IDisplayable
 {

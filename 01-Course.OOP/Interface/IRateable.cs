@@ -1,6 +1,6 @@
-﻿using Course.Oop.Models;
+﻿using Course.OOP.Models;
 
-namespace Course.Oop.Interface;
+namespace Course.OOP.Interface;
 
 internal interface IRateable
 {

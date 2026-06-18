@@ -1,4 +1,4 @@
-﻿namespace Course.Oop.Models;
+﻿namespace Course.OOP.Models;
 
 internal class Rating
 {

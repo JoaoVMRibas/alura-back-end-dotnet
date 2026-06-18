@@ -1,5 +1,5 @@
-﻿using Course.Oop.Models;
-using Course.Oop.Models.Menu;
+﻿using Course.OOP.Models;
+using Course.OOP.Models.Menu;
 
 internal class ExitMenu : MenuBase
 {

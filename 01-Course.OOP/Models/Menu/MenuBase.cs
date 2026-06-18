@@ -1,4 +1,4 @@
-﻿namespace Course.Oop.Models.Menu;
+﻿namespace Course.OOP.Models.Menu;
 
 internal class MenuBase
 {
