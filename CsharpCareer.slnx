@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="01-Course.OOP/01-Course.OOP.csproj" />
+  <Project Path="02-Course.LINQ/02-Course.LINQ.csproj" Id="6b7a2f3b-4209-4027-993c-fbc671d8b22d" />
 </Solution>
