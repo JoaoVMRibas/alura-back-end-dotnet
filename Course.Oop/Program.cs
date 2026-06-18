@@ -1,5 +1,5 @@
-﻿using ScreenSound.Models;
-using ScreenSound.Models.Menu;
+﻿using Course.Oop.Models;
+using Course.Oop.Models.Menu;
 
 Dictionary<int, MenuBase> menuOptions = new()
 {

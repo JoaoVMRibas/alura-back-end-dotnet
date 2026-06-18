@@ -1,6 +1,6 @@
-﻿using ScreenSound.Interface;
+﻿using Course.Oop.Interface;
 
-namespace ScreenSound.Models;
+namespace Course.Oop.Models;
 
 internal class Music : IRateable, IDisplayable
 {

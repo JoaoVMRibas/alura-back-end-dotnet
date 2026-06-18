@@ -1,4 +1,4 @@
-﻿namespace ScreenSound.Models.Menu;
+﻿namespace Course.Oop.Models.Menu;
 
 internal class RatingArtistMenu : MenuBase
 {

@@ -1,4 +1,4 @@
-﻿namespace ScreenSound.Models;
+﻿namespace Course.Oop.Models;
 
 internal class Rating
 {

@@ -1,4 +1,4 @@
-﻿namespace ScreenSound.Models.Menu;
+﻿namespace Course.Oop.Models.Menu;
 
 internal class RatingMusicMenu : MenuBase
 {
@@ -19,7 +19,7 @@ internal class RatingMusicMenu : MenuBase
         var albumName = Console.ReadLine() ?? "";
         if (artists[name].Musics.Any(m => m.Name.Equals(albumName)))
         {
-            var album = artists[name].Albums.First(m => m.Name.Equals(albumName));
+            var album = artists[name].Musics.First(m => m.Name.Equals(albumName));
 
             Console.Write("Music Rating: ");
             var rating = int.Parse(Console.ReadLine() ?? "");

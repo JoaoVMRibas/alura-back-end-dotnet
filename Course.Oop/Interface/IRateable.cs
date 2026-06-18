@@ -1,6 +1,6 @@
-﻿using ScreenSound.Models;
+﻿using Course.Oop.Models;
 
-namespace ScreenSound.Interface;
+namespace Course.Oop.Interface;
 
 internal interface IRateable
 {

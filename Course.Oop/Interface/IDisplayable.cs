@@ -1,4 +1,4 @@
-﻿namespace ScreenSound.Interface;
+﻿namespace Course.Oop.Interface;
 
 internal interface IDisplayable
 {
