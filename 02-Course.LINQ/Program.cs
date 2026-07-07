@@ -1,5 +1,18 @@
-﻿using (HttpClient client = new HttpClient())
+﻿using Course.LINQ.Models;
+using System.Text.Json;
+
+using (HttpClient client = new HttpClient())
 {
-    string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
-    Console.WriteLine(response);
+    try
+    {
+        string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
+        
+        var songs = JsonSerializer.Deserialize<List<Music>>(response) ?? [];
+
+        songs[0].DisplayInformation();
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine($"Error in GET request: {ex.Message}");
+    }
 }
