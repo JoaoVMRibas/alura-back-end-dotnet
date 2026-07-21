@@ -4,14 +4,14 @@ namespace Course.LINQ.Filters;
 
 internal class MusicFilter
 {
-    public static List<string?> FilterAllDistinctMusicalGenres(List<Music> musics)
+    public static List<string?> FilterAllDistinctMusicalGenres(List<Song> musics)
     {
         return musics.Select(music => music.Genre)
             .Distinct()
             .ToList();
     }
 
-    public static List<string?> FilterAllArtistNamesInAscendingOrder(List<Music> musics)
+    public static List<string?> FilterAllArtistNamesInAscendingOrder(List<Song> musics)
     {
         return musics.Select(music => music.Artist)
             .Distinct()
@@ -19,7 +19,7 @@ internal class MusicFilter
             .ToList();
     }
 
-    public static List<string?> FilterAllArtistNamesInDescendingOrder(List<Music> musics)
+    public static List<string?> FilterAllArtistNamesInDescendingOrder(List<Song> musics)
     {
         return musics.Select(music => music.Artist)
             .Distinct()
@@ -27,7 +27,7 @@ internal class MusicFilter
             .ToList();
     }
 
-    public static List<string?> FilterArtistsByMusicalGenre(List<Music> musics, string genre)
+    public static List<string?> FilterArtistsByMusicalGenre(List<Song> musics, string genre)
     {
         return musics.Where(music => music.Genre != null && music.Genre.Contains(genre))
             .Select(music => music.Artist)
@@ -35,7 +35,7 @@ internal class MusicFilter
             .ToList();
     }
 
-    public static List<Music> FilterMusicsByArtist(List<Music> musics, string artist)
+    public static List<Song> FilterMusicsByArtist(List<Song> musics, string artist)
     {
         return musics.Where(music => string.Equals(music.Artist, artist, StringComparison.OrdinalIgnoreCase))
             .ToList();

@@ -2,7 +2,7 @@
 
 namespace Course.LINQ.Models;
 
-internal class Music
+internal class Song
 {
     [JsonPropertyName("song")]
     public string? Name { get; set; }
