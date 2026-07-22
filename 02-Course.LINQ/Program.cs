@@ -10,41 +10,13 @@ using (HttpClient client = new HttpClient())
 
         var songs = JsonSerializer.Deserialize<List<Song>>(response) ?? [];
 
-        // Displays all distinct musical genres in the music list
-        var genres = MusicFilter.FilterAllDistinctMusicalGenres(songs) ?? [];
-        foreach (var genre in genres)
-        {
-            //Console.WriteLine($"- {genre}");
-        }
-
-        // Displays all distinct artists in the music list in ascending order
-        var artistsAsc = MusicFilter.FilterAllArtistNamesInAscendingOrder(songs) ?? [];
-        foreach (var artist in artistsAsc)
-        {
-            //Console.WriteLine($"- {artist}");
-        }
-
-        // Displays all distinct artists in the music list in descending order
-        var artistsDes = MusicFilter.FilterAllArtistNamesInDescendingOrder(songs) ?? [];
-        foreach (var artist in artistsDes)
-        {
-            //Console.WriteLine($"- {artist}");
-        }
-
-        // Displays all artists by the selected musical genre
-        var artistsByGenre = MusicFilter.FilterArtistsByMusicalGenre(songs, "rock") ?? [];
-        foreach (var artist in artistsByGenre)
-        {
-            //Console.WriteLine($"- {artist}");
-        }
-
-        // Displays all songs by the artist
-        var songsByArtist = MusicFilter.FilterMusicsByArtist(songs, "Michael Jackson") ?? [];
-        foreach (var song in songsByArtist)
-        {
-            //song.DisplayInformation();
-            //Console.WriteLine();
-        }
+        var playlist = new Playlist("Random Songs");
+        playlist.AddSong(songs[31]);
+        playlist.AddSong(songs[79]);
+        playlist.AddSong(songs[286]);
+        playlist.AddSong(songs[1092]);
+        playlist.AddSong(songs[1859]);
+        playlist.DisplayPlaylistSongs();
     }
     catch (Exception ex)
     {
