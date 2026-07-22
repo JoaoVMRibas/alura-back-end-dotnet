@@ -4,40 +4,47 @@ namespace Course.LINQ.Filters;
 
 internal class MusicFilter
 {
-    public static List<string?> FilterAllDistinctMusicalGenres(List<Song> musics)
+    public static List<string?> FilterAllDistinctMusicalGenres(List<Song> songs)
     {
-        return musics.Select(music => music.Genre)
+        return songs.Select(song => song.Genre)
             .Distinct()
             .ToList();
     }
 
-    public static List<string?> FilterAllArtistNamesInAscendingOrder(List<Song> musics)
+    public static List<string?> FilterAllArtistNamesInAscendingOrder(List<Song> songs)
     {
-        return musics.Select(music => music.Artist)
+        return songs.Select(song => song.Artist)
             .Distinct()
             .OrderBy(artist => artist)
             .ToList();
     }
 
-    public static List<string?> FilterAllArtistNamesInDescendingOrder(List<Song> musics)
+    public static List<string?> FilterAllArtistNamesInDescendingOrder(List<Song> songs)
     {
-        return musics.Select(music => music.Artist)
+        return songs.Select(song => song.Artist)
             .Distinct()
             .OrderByDescending(artist => artist)
             .ToList();
     }
 
-    public static List<string?> FilterArtistsByMusicalGenre(List<Song> musics, string genre)
+    public static List<string?> FilterArtistsByMusicalGenre(List<Song> songs, string genre)
     {
-        return musics.Where(music => music.Genre != null && music.Genre.Contains(genre))
-            .Select(music => music.Artist)
+        return songs.Where(song => song.Genre != null && song.Genre.Contains(genre))
+            .Select(song => song.Artist)
             .Distinct()
             .ToList();
     }
 
-    public static List<Song> FilterMusicsByArtist(List<Song> musics, string artist)
+    public static List<Song> FilterSongsByArtist(List<Song> songs, string artist)
     {
-        return musics.Where(music => string.Equals(music.Artist, artist, StringComparison.OrdinalIgnoreCase))
+        return songs.Where(song => string.Equals(song.Artist, artist, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+
+    public static List<string?> FilterSongsNameByKey(List<Song> songs, string key)
+    {
+        return songs.Where(song => song.Key.Equals(key))
+            .Select(s => s.Name)
             .ToList();
     }
 }
