@@ -9,8 +9,9 @@ internal class CheckingAccount
 
     public CheckingAccount(int branch, int number, Client holder)
     {
-        Branch = branch;
         Number = number;
+        Branch = branch;
+        Holder = holder;
     }
 
     public void Deposit(double amount)
