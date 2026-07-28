@@ -5,4 +5,9 @@ internal class Client
     public string Name { get; set; } = string.Empty;
     public string TaxId { get; set; } = string.Empty;
     public string Occupation { get; set; } = string.Empty;
+
+    public Client(string name)
+    {
+        Name = name;
+    }
 }

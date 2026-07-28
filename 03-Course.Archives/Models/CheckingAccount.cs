@@ -5,7 +5,7 @@ internal class CheckingAccount
     public int Number { get; }
     public int Branch { get; }
     public double Balance { get; private set; }
-    public Client Holder { get; set; }
+    public Client Holder { get; }
 
     public CheckingAccount(int branch, int number, Client holder)
     {
