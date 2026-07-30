@@ -1,6 +1,4 @@
 ﻿using Course.Archives.Models;
-using System.Globalization;
-using System.Text;
 
 namespace Course.Archives.Services;
 
@@ -20,7 +18,7 @@ internal class AccountFileReader
 
         using (var fs = new FileStream(_filePath, FileMode.Open))
         {
-            var reader = new StreamReader(fs);
+            using var reader = new StreamReader(fs);
             var accounts = new List<CheckingAccount>();
 
             while (!reader.EndOfStream)
@@ -44,7 +42,7 @@ internal class AccountFileReader
 
         using (var fs = new FileStream(_filePath, FileMode.Open))
         {
-            var reader = new StreamReader(fs);
+            using var reader = new StreamReader(fs);
 
             while (!reader.EndOfStream)
             {
