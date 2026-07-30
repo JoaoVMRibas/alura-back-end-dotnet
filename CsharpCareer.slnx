@@ -2,4 +2,5 @@
   <Project Path="01-Course.OOP/01-Course.OOP.csproj" />
   <Project Path="02-Course.LINQ/02-Course.LINQ.csproj" />
   <Project Path="03-Course.Archives/03-Course.Archives.csproj" />
+  <Project Path="04-Course.Collections/04-Course.Collections.csproj" Id="7a250b5d-d66f-45b1-af42-68a1019d0290" />
 </Solution>
